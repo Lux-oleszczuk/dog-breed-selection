@@ -3,6 +3,8 @@ const dogImage = document.getElementById("image");
 const breedSelect = document.getElementById("breed-select");
 const subBreedSelect = document.getElementById("sub-breed-select");
 
+let breed = "any";
+
 /**
  * 
  * @param {string} url url to be fetched
@@ -25,18 +27,14 @@ async function fetchFromAPI(url) {
 }
 
 async function fetchRandomDog() {
-    const randomUrl = "https://dog.ceo/api/breeds/image/random";
 
-    const response = await fetch(randomUrl);
-
-    if(!response.ok) {
-        throw new error("response status: " + response.status);
+    let randomDogUrl = "https://dog.ceo/api/breeds/image/random";
+    
+    if(breedSelect.value !== "any") {
+        randomDogUrl = "https://dog.ceo/api/breed/" + breedSelect.value + "images/random";
     }
-
-    const json = await response.json();
-    const message = json.message;
-
-    dogImage.src = message;
+        const imageSource = await fetchFromAPI(randomUrl);
+        dogImage.src = imageSource;   
 }
 
 
