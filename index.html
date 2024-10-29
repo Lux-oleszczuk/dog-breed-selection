@@ -5,51 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/database.js" defer></script>
 </head>
 <body>
-    <!-- dog generator -->
-    <div class="container flex-column">
-        <div>
-            <h1>Random Dog Generator</h1>
+    <div id="container-border">
+        <!-- dog generator -->
+        <div class="container flex-column">
+            <div>
+                <h1>Random Dog Generator</h1>
+            </div>
+            <img alt="A random dog is displayed">
+            <div class="container">
+                <p>
+                    Breed
+                </p>
+                <select id="breed-select">
+                    <option>
+                        any
+                    </option>
+                </select>
+            </div>
+            <div class="container">
+                <p>
+                    Sub Breed
+                </p>
+                <select id="sub-breed-select">
+                    <option>
+                        any
+                    </option>
+                </select>
+            </div>
+            <div>
+                <button>
+                    Get Random Dog
+                </button>
+                <button>
+                    Add To Favourites
+                </button>
+            </div>
         </div>
-        <img alt="A random dog is displayed">
-        <div class="container">
-            <p>
-                Breed
-            </p>
-            <select>
-                <option>
-                    any
-                </option>
-            </select>
-        </div>
-        <div class="container">
-            <p>
-                Sub Breed
-            </p>
-            <select>
-                <option>
-                    any
-                </option>
-            </select>
-        </div>
-        <div>
-            <button>
-                Get Random Dog
-            </button>
-            <button>
-                Add To Favourites
-            </button>
-        </div>
-    </div>
-    <div class="container flex-column">
-        <div>
-            <button>
-                Download All Favourites
-            </button>
-            <h2>
-                Your Favourites
-            </h2>
+        <div class="container flex-column">
+            <div>
+                <button>
+                    Download All Favourites
+                </button>
+                <h2>
+                    Your Favourites
+                </h2>
+            </div>
         </div>
     </div>
 </body>
