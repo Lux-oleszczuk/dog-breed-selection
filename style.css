@@ -8,6 +8,10 @@ body {
     background-color: rgb(139, 161, 135);
     border-radius: 20px;
 }
+#image {
+    height: 400px;
+    border-radius: 20px;
+}
 h1 {
     color: rgb(51, 59, 49);
 }
