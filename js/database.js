@@ -39,6 +39,13 @@ async function fetchRandomDog() {
 
 
 async function fetchBreedPossibilities() {
+    while (subBreedSelect.options.length > 0) {
+        subBreedSelect.remove(0);
+    }
+    const newOption = documentr.createElement("option");
+    newOption.text = "any";
+    subBreedSelect.options.add(newOption, "any");
+                                
     const breedListUrl = "https://dog.ceo/api/breeds/list";
 
     const breedList = await fetchFromAPI(breedListUrl);
