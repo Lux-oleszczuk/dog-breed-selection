@@ -1,21 +1,25 @@
+//variables of image generator part
 const randomDogButton = document.getElementById("random-button");
 const dogImage = document.getElementById("image");
+
+//variables of selection part
 const breedSelect = document.getElementById("breed-select");
 const subBreedSelect = document.getElementById("sub-breed-select");
 
-let breed = "any";
-
 /**
- * 
+ * fetch information from an API and return the data in a message
  * @param {string} url url to be fetched
  */
 
 async function fetchFromAPI(url) {
     try {
+        //get response from API
         const response = await fetch(url);
+        //check response
         if(!response.ok) {
             throw new Error("response status: " + response.status);
         }
+        //get json from response
         const json = await response.json();
 
         return json.message;
@@ -27,7 +31,7 @@ async function fetchFromAPI(url) {
 }
 
 async function fetchRandomDog() {
-
+    //define randon dog url
     let randomDogUrl = "https://dog.ceo/api/breeds/image/random";
     
     if(breedSelect.value !== "any") {
